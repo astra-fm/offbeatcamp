@@ -1,0 +1,699 @@
+/*
+Theme Name:  Urbanlab
+Theme URI:  https://www.urbanlab.fm
+Description:  Urbanlab radio station - The Future of music is here
+Author:  Urbanlab
+Textdomain:  twentytwentyone
+Template:  twentytwentyone
+Author URI:  https://www.pablogoris.com
+Version:  1.8
+License:  GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html                 
+*/
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+  
+body.no-scroll {
+    overflow: hidden;
+}
+.slider-wrapper{
+    width:100%;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    top:0;
+    left:0;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 50% 50%;
+    background-size: cover;
+    opacity: 0;
+    transition: opacity 5s linear;
+}
+
+.slide-info{
+    text-align: center;
+    position:fixed;
+    bottom:10%;
+    left:50%;
+    background: rgba(61, 61, 61, 0.9);
+    color:#fff;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:30px;
+    padding-right:30px;
+    font-size: 12px;
+    border-radius: 6px;
+    transform: translate(-50%, -50%);
+}
+.slide.active {
+    opacity: 1;
+    display:block;
+}
+.pg-branding{
+    display: inline-block;
+    margin-left:110px;
+}
+
+.ul-display-iblock{
+    display:inline-block;
+}
+#ul-volume-control{
+    position: relative;
+}
+.ul-padding-right{
+    padding-right:10px;
+}
+
+
+/* helpers */
+
+.obc-space-xx{
+    padding-top:60px;
+}
+
+/* container */
+.container-fluid{
+    width:100%;
+}
+.primary-navigation > div > .menu-wrapper {
+    justify-content:flex-end;
+}
+.site-main{
+    padding-top:0;
+}
+.site-content{
+    padding-bottom:40px;
+}
+/* disable widget area */
+.widget-area{
+    display: none;
+}
+@media only screen and (max-width: 481px){
+    .lock-scrolling .site {
+        position: inherit;
+    }
+}
+.singular .entry-header{
+    margin-left:10%;
+    margin-right:10%;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-left:5%;
+    margin-right:0;
+}
+
+
+/* preloading content */
+
+#preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: rgba(255,255,255,1);
+}
+#featured-image-slider{
+    position: relative;
+}
+
+.loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -95px;
+    margin-top: -50px;
+    color:#999999;
+}
+
+.home-preloader {
+    position: fixed; /* Set the preloader to fixed positioning */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255,255,255,0.8);  /* Semi-transparent white background */
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#prevPlaceholderImage {
+    max-width: 200px; /* Adjust this to the size you want for your spinner */
+}
+
+/* header */
+@media only screen and (min-width: 822px){
+    .site-header {
+        padding:20px;
+    }
+}
+#masthead{
+    position: fixed;
+    width:100%;
+    z-index: 10000!important;
+}
+#masthead .row{
+    margin-bottom:0;
+}
+.site-branding:last-child {
+    text-align: left;
+}
+.site-branding a{
+    color: #000;
+    font-weight: bold;
+}
+.ul-bg-header{
+    background-color: rgba(255,255,255,0.92);
+    position:relative;
+    z-index: 100000;
+    box-shadow: 0px 0px 6px 0px #ccc;
+}
+.site-logo .custom-logo{
+    max-width: inherit;
+    max-height: inherit;
+    width:60px;
+    
+}
+.site-title{
+    font-weight: 600;
+    font-size:1.2rem;
+    text-transform: none;
+}
+.site-description{
+    color:#6e6e6e;
+    font-size: 0.9rem;
+    display: block;
+    font-weight: 400;
+}
+.obc-brand{
+    line-height: 2.9;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    position: absolute;
+    width:100px;
+    text-align: center;
+    background-color: #000;
+    margin-left:-12px;
+}
+/*.site-logo{
+    line-height: 2.9;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    position: absolute;
+    width:100px;
+    text-align: center;
+    background-color: #000;
+    margin-left:-11px;
+}*/
+@media screen and (min-width: 1024px) {
+    .obc-brand{
+        line-height: 3.1;
+    }
+}
+nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i{
+    line-height: 55px;
+    height: 50px;
+}
+.fa-solid, .fas{    
+    padding-top:15px;
+  
+}
+/* navigation */
+nav{
+    background-color: transparent;
+    box-shadow:none;
+}
+nav ul a{
+    color:#666;
+}
+nav ul a:hover{
+    background-color: transparent;
+    color:#000;
+}
+#primary-menu-list li, #primary-menu-list li a{
+    background-color: transparent;
+    color:#000;
+}
+a[aria-current] {
+    background-color: transparent;
+}
+.primary-menu-container{
+    float: left;
+}
+.menu-button-container{
+    padding-top:5px;
+}
+.site .button:focus, button:focus, input[type=submit]:focus, input[type=reset]:focus, .wp-block-search .wp-block-search__button:focus, .wp-block-button .wp-block-button__link:focus, .wp-block-file a.wp-block-file__button:focus{
+    outline: transparent;
+}
+
+/* CSS code */
+@media screen and (min-width: 768px) {
+    /* Hide the button on large screens (desktop) */
+    .menu-button-container {
+        display: none;
+    }
+    /* Show the menu on large screens (desktop) */
+    #ul-main-menu {
+        display: block;
+    }
+    .primary-menu-container{
+        float: right;
+    }
+}
+
+@media screen and (max-width: 768px) {
+/* Show the button on small screens (mobile) */
+    .menu-button-container {
+        display: block;
+    }
+    /* Initially hide the menu on small screens (mobile) */
+    #ul-main-menu {
+        display: none;
+    }
+}
+.primary-navigation-open .menu-button-container{
+    width:60px;
+    background-color: transparent;
+}
+#ul-main-menu{
+    background-color:#fff;
+    position:absolute;
+    width:100%;
+    top:0;
+    left:0;
+}
+@media screen and (min-width: 768px) {
+    #ul-main-menu{
+        background-color: transparent;
+        position:inherit;
+        width:inherit;
+        top:inherit;
+        left:inherit;
+    }
+}
+.policy-nav{
+    position: absolute;
+    background-color: #fff;
+    padding:10px;
+    top:65px;
+    right:10px;
+    border-radius: 5px;
+    display: none;
+}
+.policy-nav a{
+    line-height: 2;
+}
+
+/* current show header */
+
+.ul-title-listening{
+    font-size:14px;
+    color:#999;
+}
+.ul-show-title{
+    font-size:24px;
+}
+#show-schedule{
+    font-size:16px;
+    font-weight: 600;
+}
+.show-image{
+    max-width:200px;
+}
+
+/* next show home */
+
+.bg-next-show{
+    border:1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    padding:15px;
+}
+#next-show-time{
+    font-size: 14px;
+    color: #999;
+} 
+#next-show-image img{
+    max-width:150px;
+    border-radius: 4px;
+} 
+#next-show-image{
+    text-align: center;
+}
+#next-show-time, #next-show{
+    margin-left:0;
+    width:100%;
+    text-align: center;
+}
+.bg-next-show .col{
+    float: inherit;
+}
+@media screen and (min-width: 768px) {
+    #next-show-time, #next-show{
+        width:100%;
+        text-align: left;
+    }
+    #next-show-image{
+        text-align: left;
+    }
+    .bg-next-show .col{
+        float: left;
+    }
+}
+@media screen and (min-width: 1024px) {
+    #next-show-time, #next-show{
+        margin-left:20px;
+    }
+}
+#current-show-time{
+    font-size:14px;
+    color:#999;
+}
+#next-show-description{
+    font-size: 14px;
+}
+.next-show-content{
+    padding-top:25px!important;
+}
+#next-show .ul-show-title{
+    font-size:16px;
+    font-weight: 600;
+}
+#next-show span{
+    font-size:14px;
+}
+.ul-page-bg-current-song{
+    padding-top:80px;
+}
+
+/* home albums slider */
+.ul-previous-track, .ul-current-track, .ul-next-track{
+    margin:0 auto;
+    font-size:12px;
+    word-wrap: normal;
+}
+.ul-previous-track img, .ul-current-track img, .ul-next-track img{
+    border-radius: 4%;
+}
+.ul-previous-track img{
+    width:80%;
+}
+.ul-previous-track, .ul-next-track{
+    padding-top:20px;
+}
+.ul-title-slider{
+    font-size:14px;
+    padding-bottom:10px;
+    font-weight: 600;
+    color:#999;
+}
+.ul-track-name{
+    font-weight: 600;
+}
+.ul-artist-info{
+    padding-top:10px;
+}
+.ul-image-opacity{
+    opacity: 0.5;
+}
+.ul-current-track img{
+    width:80%;
+    background-color: #e1e1e1;
+    padding:20px;
+}
+#prevTrackImage, #prevPlaceholderImage, #laterSongPlaceholderImage, #laterSongArt{
+    width:80%;
+    margin-top:35px;
+}
+
+/* home artist bio */
+
+#artistBio a{
+    display: none;
+}
+#artistBio{
+    font-size: 14px;
+}
+.bio-wrapper{
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+.container-full{
+    background-color: #efefef;
+    width:100%;
+    padding-top:50px;
+    padding-bottom:50px;
+}
+.bio-title{
+    font-size: 16px;
+    font-weight: 600;
+    padding-bottom:5px;
+}
+.col-bio{
+    max-width:600px;
+}
+.justify-content{
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+
+/* home history songs */
+
+#songsHistory img{
+    width:60px;
+    border-radius: 4px;
+}
+#songsHistory {
+    font-size: 12px;
+}
+/* modify the song time */
+#songsHistory .hide-on-small-only div{
+    position:absolute;
+    top:30px;
+}
+#songsHistory .row{
+    border: 0.5px solid #ccc;
+    padding:10px;
+    border-radius: 4px;
+    position: relative;
+}
+.historyImg, .historyInfo{
+    display: inline-block;
+}
+.historyInfo{
+    padding-left:15px;
+}
+.historyAlbum{
+    font-weight: bold;
+    position: absolute;
+    top:30px;
+}
+.historyArtist{
+    font-weight: bold;
+}
+
+/* footer */
+
+.no-widgets .site-footer{
+    margin-top:0;
+    padding-bottom:0;
+}
+.ul-footer-player{
+    height:60px;
+    background-color: rgba(255,255,255,1);
+    position:fixed;
+    width:100%;
+    bottom:0;
+    z-index: 9999;
+    box-shadow: 0px 0px 6px 0px #ccc;
+}
+
+/* player */
+
+#controls {
+    width: 100%;
+    text-align: left;
+    padding-left:15px;
+    padding-right:15px;
+}
+.hidden {
+    display: none;
+}
+.volume-slider-container {
+    height: 45px;
+    width: 0;
+    margin: 0px auto;
+    transform: rotate(-90deg);
+}
+.volume-slider-container input[type=range]{
+    border:0;
+}
+#volumeSlider {
+    width: 100px;
+}
+#ul-volume-control {
+    position: relative;
+}
+#volumeControl{
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%); /* Center the element */
+}
+#volumeIcon{
+    padding-right:15px;
+}
+#volumeSlider::-webkit-slider-thumb {
+    background: #000;
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+}
+.ul-now-playing{
+    font-size:14px;
+    position: absolute;
+    top:20px;
+}
+
+#stopBtn, #playBtn, #volumeIcon{
+    font-size:22px;
+}
+#stopBtn .fa-solid, #playBtn .fa-solid{
+    line-height: 1.4;
+}
+/* recent songs */
+.ul-track-image, .ul-track-info{
+    float:left;
+}
+.ul-track-info{
+    padding-left:10px;
+    padding-top:5px;
+}
+.ul-track-artist{
+    font-weight: 600;
+}
+.ul-image-recent img{
+    border-radius: 4px;
+}
+.ul-recent-track{
+    font-size:14px;
+    border-bottom: 0.5px solid #ccc;
+    margin-top:10px;
+}
+.ul-recent-track .row{
+    margin-bottom:10px;
+}
+.ul-image-recent{
+    height:100%;
+}
+.ul-album-name p{
+    padding-top:15px;
+}
+@media screen and (min-width: 700px) {
+    .ul-previous-track img, .ul-next-track img{
+        width:200px;
+    }
+}
+.ul-previous-track img, .ul-next-track img{
+    width:100%;
+}
+
+.ul-next-track .next-track-later, .ul-previous-track .previous-track{
+    width: 80%;
+    margin-top:35px;
+}
+
+/* HORIZONTAL NEWS */
+* {
+    box-sizing: border-box;
+  }
+  
+  @-webkit-keyframes ticker {
+    0% {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      visibility: visible;
+    }
+    100% {
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+  @keyframes ticker {
+    0% {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      visibility: visible;
+    }
+    100% {
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+  .ticker-wrap {
+    position: fixed;
+    bottom: 0;
+    width:400px;
+    overflow: hidden;
+    height: 3rem;
+    line-height: 1.5rem;
+    padding-left: 40%;
+    box-sizing: content-box;
+    margin-left:5px;
+  }
+  .ticker-wrap .ticker {
+    display: inline-block;
+    white-space: nowrap;
+    padding-right: 100%;
+    box-sizing: content-box;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-name: ticker;
+    animation-name: ticker;
+    -webkit-animation-duration: 10s;
+    animation-duration: 10s;
+  }
+  .ticker-wrap .ticker__item {
+    display: inline-block;
+    padding: 0 2rem;
+    font-size: 0.9rem;
+    color: rgb(30, 30, 30);
+  }
+
+@media screen and (min-width: 768px) {
+    .ticker-wrap {
+        line-height: 2rem;
+        padding-left: 20%;
+        margin-left:5px;
+    }
+
+}
+
+
+
+
+  
+
